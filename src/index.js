@@ -1,28 +1,22 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-// const createApp = (props) => {
-//     return (
-//         <div>
-//             {/* 只要是要写js 就加一层花括号  注释也是js 所以也要加 */}
-//             <h1>{props.title}</h1>
-//             <p>{props.name}</p>
-//         </div>
-//     ) 
-// }
-// const app = createApp({
-//     title: '你好',
-//     name: '夏明'
-// })
-// 第一种创建组件的方式  函数式   上边就是原理  
-const App = (props) => {
-    return (
-        <div>
-            <p>{props.name}</p>
-            <p>{props.title}</p>
-        </div>
-    )
+import { render } from "react-dom"
+
+// 定义组件的第二个方式 使用类
+
+class App extends React.Component {
+    render () {
+        console.log(this.props)
+        return (
+            <div>
+                <h>我就是类创建出来的组件</h>
+                <div>{this.props.msg}</div>
+            </div>
+        )    
+    }
 }
-ReactDOM.render(
-    <App title="你好" name="小明"/>,
+
+
+render(
+    <App msg="测试的数据"/>,
     document.querySelector('#root')
 )
