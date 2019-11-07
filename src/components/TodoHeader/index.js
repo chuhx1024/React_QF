@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class TodoHeader extends Component {
-    render() {
-        return (
-            <h1>
-                我就是todoHeader
-            </h1>
-        )
-    }
+export default function TodoHeader(props) {
+    return (
+        <div>
+            <h1>{props.children}</h1>
+            <h1>{props.desc}</h1>
+        </div>
+    )
 }
+
+
