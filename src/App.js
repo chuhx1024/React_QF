@@ -9,7 +9,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <TodoHeader desc="今日事, 今日毕">
+                <TodoHeader desc="今日事, 今日毕" x={1}>
                     待办事列表
                 </TodoHeader>
                 <TodoInput/>

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function TodoHeader(props) {
     return (
@@ -7,6 +8,11 @@ export default function TodoHeader(props) {
             <h1>{props.desc}</h1>
         </div>
     )
+}
+
+TodoHeader.propTypes = {
+    desc: PropTypes.string,
+    x: PropTypes.string
 }
 
 
