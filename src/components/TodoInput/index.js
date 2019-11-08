@@ -5,6 +5,9 @@ export default class TodoInput extends Component {
     static propTypes = {
         btnText: PropTypes.string
     }
+    static defaultProps = {
+        btnText: '我就是默认值'
+    }
     render() {
         return (
             <div>
