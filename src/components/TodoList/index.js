@@ -3,11 +3,21 @@ import TodoItem from './TodoItem'
 
 export default class TodoList extends Component {
     render() {
+        console.log(this.props)
         return (
-            <div>
-                我就是TodoList组件
-                <TodoItem/>
-            </div>
+            <ul>
+                {
+                    this.props.todos.map((item, index) => {
+                        console.log({...item})
+                        return (
+                            <TodoItem 
+                                key={index} 
+                                {...item}
+                            />
+                        )
+                    })
+                }
+            </ul>
         )
     }
 }
