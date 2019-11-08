@@ -21,6 +21,20 @@ export default class App extends Component {
             ]
         }
     }
+    addTodoList = (val) => {
+        // 此时可以拷贝一个新的数组 
+        // let temp = JSON.parse(JSON.stringify(this.state.todos))
+        let temp = this.state.todos.slice()
+        temp.push({
+            id: Math.random(),
+            title: val,
+            isCompleted: false
+        })
+        this.setState({
+            todos: temp
+        })
+    }
+
     render() {
         return (
             <div>
@@ -32,6 +46,7 @@ export default class App extends Component {
                 </TodoHeader>
                 <TodoInput 
                     btnText="ADD"
+                    addTodoList={this.addTodoList}
                     />
                 <TodoList todos={this.state.todos}/>
                 <Like/>

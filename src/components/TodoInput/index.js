@@ -8,11 +8,31 @@ export default class TodoInput extends Component {
     static defaultProps = {
         btnText: '我就是默认值'
     }
+    constructor () {
+        super()
+        this.state = {
+            inputValue: 'xxx'
+        }
+    }
+    // 处发 添加事件
+    handleAddTodoList = () => {
+        this.props.addTodoList(this.state.inputValue)
+    }
+    // input的 change事件
+    changeVal = (e) => {
+        this.setState({
+            inputValue: e.currentTarget.value
+        })
+    }
     render() {
         return (
             <div>
-                <input type="text"/>
-            <button>{this.props.btnText}</button>
+                <input onChange={this.changeVal} value={this.state.inputValue} type="text"/>
+            <button
+                onClick={this.handleAddTodoList}
+                >
+                {this.props.btnText}
+            </button>
             </div>
         )
     }
