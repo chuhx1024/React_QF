@@ -12,7 +12,7 @@ export default function TodoHeader(props) {
 
 TodoHeader.propTypes = {
     desc: PropTypes.string,
-    x: PropTypes.string
+    x: PropTypes.number
 }
 
 
