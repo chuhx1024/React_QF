@@ -16,7 +16,7 @@ export default class App extends Component {
                     待办事列表
                 </TodoHeader>
                 <TodoInput 
-                    // btnText="ADD"
+                    btnText="ADD"
                     />
                 <TodoList/>
             </div>

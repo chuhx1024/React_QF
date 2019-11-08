@@ -15,4 +15,8 @@ TodoHeader.propTypes = {
     x: PropTypes.number
 }
 
+TodoHeader.defaultProps = {
+    desc: '我就是默认值'
+}
+
 
