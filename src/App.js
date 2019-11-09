@@ -34,6 +34,19 @@ export default class App extends Component {
             todos: temp
         })
     }
+    // 修改 isCompleted 的值
+    onCompleteChange = (id) => {
+        this.setState({
+            todos: this.state.todos.map((item)=>{
+                if (item.id === id) {
+                    item.isCompleted = !item.isCompleted
+                }
+                return item
+            })
+        })
+        
+    }
+
 
     render() {
         return (
@@ -48,7 +61,11 @@ export default class App extends Component {
                     btnText="ADD"
                     addTodoList={this.addTodoList}
                     />
-                <TodoList todos={this.state.todos}/>
+                <TodoList
+                    todos={this.state.todos}
+                    onCompleteChange={this.onCompleteChange}
+                    > 
+                </TodoList>
                 <Like/>
             </div>
         )
